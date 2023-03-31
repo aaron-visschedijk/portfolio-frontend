@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 
-function Navbar() {
-  return (
-    <div>
-      <Link to="/">Home </Link>
-      <Link to="/about">About</Link>
-      <Link to="/projects">Projects</Link>
-    </div>
-  );
-};
+interface NavbarProps {
+  paths: { path: string; name: string, classPrefix: string, key: string }[];
+}
+
+const Navbar: React.FC<NavbarProps> = ({ paths }) => {
+  return <div className="navbar">
+    {paths.map((path) => (
+      <Link key={path.key} className={path.classPrefix+"__link"} to={path.path}>{path.name}</Link>
+    ))}
+  </div>;
+}
 
 export default Navbar;

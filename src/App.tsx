@@ -8,23 +8,22 @@ import ProjectsPage from './pages/ProjectsPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 
+const mainPaths = [
+  { path: '/', component: HomePage, name: 'Home', classPrefix: 'home', key: 'home' },
+  { path: '/about', component: AboutPage, name: 'About', classPrefix: 'about', key: 'about' },
+  { path: '/projects', component: ProjectsPage, name: 'Projects', classPrefix: 'projects', key: 'projects' },
+];
+
+
 function App() {
-  const [data, setData] = React.useState<string>("");
-
-  React.useEffect(() => {
-    fetch('https://4i3qvu8esj.execute-api.eu-central-1.amazonaws.com/dev/about')
-      .then(response => response.json())
-      .then(data => setData(data[0].fields.title));
-  }, []);
-
   return (
     <div className="App">
-      <Navbar/>
+      <Navbar paths={mainPaths}/>
       <Routes>
-        <Route path='/' Component={HomePage}/>
-        <Route path='/about' Component={AboutPage} />
-        <Route path='/projects' Component={ProjectsPage} />
-        <Route path='*' Component={NotFoundPage} />
+        {mainPaths.map((path) => (
+          <Route key={path.key} path={path.path} Component={path.component} />)
+        )}
+        <Route key="error" path='*' Component={NotFoundPage} />
       </Routes>
     </div>
   )
