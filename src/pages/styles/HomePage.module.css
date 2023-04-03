@@ -1,0 +1,17 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 16px;
+  }
+  
+  .griditem {
+    padding: 16px;
+    background-color: black;
+    transition: transform 0.3s ease;
+  }
+  
+  .griditem.removing {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+

@@ -1,0 +1,19 @@
+.about {
+    display: flex;
+}
+
+.bio {
+    margin-right: 100px;
+}
+
+.bio > p {
+    padding-bottom: 0.5rem;
+}
+
+.image {
+
+    margin-left: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    max-width: 300px;
+}

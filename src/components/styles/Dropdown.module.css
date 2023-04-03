@@ -1,0 +1,36 @@
+.drop {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    transition: all 0.5s ease;
+}
+
+.bar {
+    padding: 1rem;
+    color: aliceblue;
+    text-decoration: none;
+    border-bottom: 1px solid #ffffff;
+    background-color: #ffffff8f;
+}
+
+.link {
+    padding: 1rem;
+    color: aliceblue;
+    text-decoration: none;
+    border-bottom: 1px solid #ffffff;
+    background-color: #ffffff20;
+}
+
+.linktext {
+    width: 90vw;
+    max-width: 920px;
+    margin: auto;
+}
+
+.toggle {
+    width: 90vw;
+    max-width: 920px;
+    margin: auto;
+    text-align: right;
+}

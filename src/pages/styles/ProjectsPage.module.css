@@ -1,0 +1,18 @@
+.header {
+    display: flex;
+    width: fit-content;
+    background-color: transparent;
+    border: none;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.arrow {
+    overflow: hidden;
+    transition: width 0.3s ease;
+    width: 30px;
+}
+
+.header:disabled > .arrow {
+    width: 0;
+}
