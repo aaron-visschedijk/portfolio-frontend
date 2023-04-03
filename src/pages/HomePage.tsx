@@ -1,8 +1,13 @@
+import { useParams } from "react-router-dom";
+import AnimatedGrid from "../components/AnimatedGrid";
+
+
 export default function HomePage() {
+
     return (
-        <>
-            <h1>Hey from HomePage</h1>
-            <p>This is your awesome HomePage subtitle</p>
-        </>
-    );
+        <div>
+            <h1 className="pagetitle">Welcome</h1>
+            
+        </div>
+    )
 }
