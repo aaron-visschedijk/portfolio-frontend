@@ -1,15 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import AboutPage from './pages/AboutPage';
-import AnimatedGrid from './pages/HomePage';
 import Navbar from './components/Navbar';
 import ProjectsPage from './pages/ProjectsPage';
 import NotFoundPage from './pages/NotFoundPage';
-import ProjectPage from './pages/ProjectPage';
 import Dropdown from './components/Dropdown';
 import HomePage from './pages/HomePage';
-import { TransitionGroup } from 'react-transition-group';
 
 
 const mainPaths = [
