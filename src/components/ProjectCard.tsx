@@ -4,8 +4,7 @@ import styles from './styles/ProjectCard.module.css';
 
 
 interface ProjectCardProps {
-    id: number;
-    name: string;
+    title: string;
     image: string;
     tags: {
         name: string;
@@ -15,7 +14,7 @@ interface ProjectCardProps {
 
 
 
-export default function ProjectCard({ id, name, image, tags }: ProjectCardProps) {
+export default function ProjectCard({ title: name, image, tags }: ProjectCardProps) {
 
 
     return <div className={styles.project}><div className={styles.card}>

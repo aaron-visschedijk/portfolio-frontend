@@ -7,12 +7,16 @@ import styles from './styles/AnimatedGrid.module.css'
 
 interface ProjectData {
   id: number;
-  name: string;
+  title: string;
+  titleLong: string;
   image: string;
   tags: { name: string; color: string }[];
+  description: string;
+  date: string;
+  link: string;
+  linkText: string;
+  github: string;
 }
-
-const projectdata: ProjectData[] = [{ "id": 8, "name": "ClipWidgets", "image": "clipwidgets2.png", "tags": [{ "name": "3D printing", "color": "#FF6422" }] }, { "id": 7, "name": "Portfolio Frontend", "image": "portfolio.png", "tags": [{ "name": "React", "color": "#2B98FF" }, { "name": "Typescript", "color": "#4550FF" }] }, { "id": 6, "name": "This portfolio", "image": "visaphoto.jpeg", "tags": [{ "name": "Python", "color": "#FFD00E" }, { "name": "Rust", "color": "#FF6C1C" }] }, { "id": 3, "name": "test", "image": "profile.jpeg", "tags": [] }]
 
 interface CardData {
   id: number;
@@ -21,21 +25,29 @@ interface CardData {
 }
 
 
-const data: CardData[] = projectdata.map((item: ProjectData) => (
-  [
-    { id: item.id, type: "item", card: <ProjectCard {...item} /> },
-    { id: item.id, type: "info", card: <div><h1>Title</h1> <p>Long description</p></div> },
-    { id: item.id, type: "meta", card: <div><b>Data:</b> 13-10-1996</div> },
-  ]
-)).flat();
-
-
-const AnimatedGrid = (props: any) => {
+const AnimatedGrid = (props: { path: string, projectData: ProjectData[] }) => {
   const path = props.path;
   const [focusId, setFocusId] = useState(parseInt(path?.toString() || "0"));
   const navigate = useNavigate();
 
+  const data: CardData[] = props.projectData.map((item: ProjectData) => (
+    [
+      { id: item.id, type: "item", card: <ProjectCard title={item.title} image={item.image} tags={item.tags} /> },
+      {
+        id: item.id, type: "info", card: <div><h1>{item.titleLong}</h1>{item.description.split("\n").map(
+          (paragraph) => <p>{paragraph}<br/></p>
+        )}</div>
+      },
+      { id: item.id, type: "meta", card: <div>
+        <p>
+          {!!item.date && <><b>Date: </b>{item.date}<br/></>}
+          {!!item.github && <><b>Date: </b>{item.github}<br/></>}
+          {!!item.link && <><b>Link: </b><a href={item.link}>{item.linkText}</a><br/></>}
+        </p>
 
+      </div> },
+    ]
+  )).flat();
 
   const focus: (id: number) => void = (id: number) => {
     navigate('/projects/' + id);
