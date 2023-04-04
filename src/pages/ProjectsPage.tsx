@@ -7,6 +7,7 @@ import S3Image from "../components/S3Image";
 import { apiFetch } from "../utils";
 
 import styles from './styles/ProjectsPage.module.css';
+import arrow from '../arrow.svg'
 
 
 interface Project {
@@ -38,8 +39,8 @@ export default function ProjectsPage() {
             <button disabled={!inFocus} className={styles.header} onClick={() => {
                 navigate('/projects');
               }}>
-                <h1 className={styles.arrow}> {"<"} </h1>
-                <h1 className={"pagetitle " + {projectId}}>Projects</h1>
+                <img className={styles.arrow} src={arrow}></img>
+                <h1 className={"pagetitle"}>Projects</h1>
             </button>
 
             <Loader request={apiFetch<Project[]>("/projects")}>
