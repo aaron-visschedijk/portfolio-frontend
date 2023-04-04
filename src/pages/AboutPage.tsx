@@ -1,4 +1,5 @@
 import Loader from "../components/Loader";
+import ProjectCard from "../components/ProjectCard";
 import S3Image from "../components/S3Image";
 import { apiFetch } from "../utils";
 import styles from './styles/AboutPage.module.css';
@@ -25,7 +26,7 @@ function AboutPage() {
                         <div className={styles.bio}>
                             {parahraphs}
                         </div>
-                        <S3Image className={styles.image} src={data.photo} />
+                        <div className={styles.image}><ProjectCard active={true} title={"Hi there!"} image={data.photo} tags={[]}></ProjectCard></div>
                     </div>);
                     }
                 }
