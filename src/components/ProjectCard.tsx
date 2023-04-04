@@ -4,6 +4,7 @@ import styles from './styles/ProjectCard.module.css';
 
 
 interface ProjectCardProps {
+    active: boolean;
     title: string;
     image: string;
     tags: {
@@ -14,20 +15,17 @@ interface ProjectCardProps {
 
 
 
-export default function ProjectCard({ title: name, image, tags }: ProjectCardProps) {
+export default function ProjectCard({ title, image, tags, active}: ProjectCardProps) {
 
-
-    return <div className={styles.project}><div className={styles.card}>
+    return <div className={active ? styles.activecard : styles.card}>
         <S3Image className={styles.image} src={image} />
-            <div className={styles.data}>
-                <h3 className={styles.title}>{name}</h3>
-                <div className={styles.tags}>
-                    {tags.map((tag) =>
-                        <ProjectTag {...tag} />
-                    )}
-                </div>
+        <div className={styles.data}>
+            <h3 className={styles.title}>{title}</h3>
+            <div className={styles.tags}>
+                {tags.map((tag) =>
+                    <ProjectTag {...tag} />
+                )}
             </div>
         </div>
     </div>
-
 }

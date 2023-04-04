@@ -32,7 +32,7 @@ const AnimatedGrid = (props: { path: string, projectData: ProjectData[] }) => {
 
   const data: CardData[] = props.projectData.map((item: ProjectData) => (
     [
-      { id: item.id, type: "item", card: <ProjectCard title={item.title} image={item.image} tags={item.tags} /> },
+      { id: item.id, type: "item", card: <ProjectCard title={item.title} image={item.image} tags={item.tags} active={item.id === focusId} /> },
       {
         id: item.id, type: "info", card: <div><h1>{item.titleLong}</h1>{item.description.split("\n").map(
           (paragraph) => <p>{paragraph}<br/></p>
