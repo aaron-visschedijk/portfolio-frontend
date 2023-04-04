@@ -4,15 +4,28 @@
     background-color: transparent;
     border: none;
     color: white;
+    cursor: pointer;
     margin-bottom: 1rem;
+    font-family: Poppins;
 }
 
 .arrow {
+    filter: invert(1);
     overflow: hidden;
-    transition: width 0.3s ease;
-    width: 30px;
+    transition: all 0.3s ease;
+    width: 60px;
+    font-size: 60px;
+    margin-right: 1rem;
+    background-color: rgba(255, 255, 255, 0.182);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.arrow:hover {
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .header:disabled > .arrow {
     width: 0;
+    padding: 0;
 }

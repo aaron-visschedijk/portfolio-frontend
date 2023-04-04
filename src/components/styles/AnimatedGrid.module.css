@@ -9,22 +9,17 @@
     margin: 0;
   }
 
-
-
   @media(min-width: 768px) {
     .content{
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
-
   @media(min-width: 980px) {
     .content {
       grid-template-columns: repeat(3, 1fr);
     }
   }
-
-
   
   .info {
     grid-column: span 3;

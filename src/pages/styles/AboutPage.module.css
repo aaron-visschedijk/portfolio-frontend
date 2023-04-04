@@ -2,6 +2,8 @@
     display: flex;
 }
 
+
+
 .bio {
     margin-right: 100px;
 }
@@ -14,6 +16,18 @@
 
     margin-left: auto;
     object-fit: cover;
-    border-radius: 8px;
     max-width: 300px;
+}
+
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column-reverse;
+    }
+
+    .image {
+        margin-left: 0;
+        margin-bottom: 5rem;
+        object-fit: cover;
+        max-width: 300px;
+    }
 }

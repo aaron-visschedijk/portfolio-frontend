@@ -1,16 +1,17 @@
 .spinner {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
-    animation: rotation 2s infinite linear;
 }
 
-@keyframes rotation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(359deg);
-    }
-  }
+.done {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.not {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}

@@ -2,18 +2,35 @@
 .card {
     position: relative;
     padding: 16px;
-    border-radius: 8px;
+    border-radius: 4px;
     width: 280px;
     height: 336px;
-    background-color: rgba(212, 200, 200, 0.475);
+    background-color: rgba(212, 204, 200, 0.906);
+    color: rgb(0, 0, 0);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.activecard {
+    position: relative;
+    padding: 16px;
+    border-radius: 4px;
+    width: 280px;
+    height: 336px;
+    background-color: rgba(255, 255, 255, 0.811);
+    transform:  scale(1.03) translateY(0.7rem);
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
     color: rgb(0, 0, 0);
     overflow: hidden;
     transition: all 0.3s ease;
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-0.1rem) scale(1.05) rotate(.8deg);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.811);
     cursor: pointer;
 }
 
@@ -25,8 +42,9 @@
     object-fit: cover;
     display:block;
     margin:auto;
-    border-radius: 8px;
     opacity: 0.8;
+    border-radius: 2px;
+    
 }
 
 .data {
@@ -46,7 +64,6 @@
 }
 
 .title {
-
     margin-top: 0.3rem;
     font-size: 24px;
     font-weight: 400;
