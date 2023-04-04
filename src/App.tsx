@@ -7,12 +7,15 @@ import ProjectsPage from './pages/ProjectsPage';
 import NotFoundPage from './pages/NotFoundPage';
 import Dropdown from './components/Dropdown';
 import HomePage from './pages/HomePage';
+import ContactPage from './pages/ContactPage';
 
 
 const mainPaths = [
   { path: '/', component: HomePage, name: 'Home', classPrefix: 'home', key: 'home' },
   { path: '/about', component: AboutPage, name: 'About', classPrefix: 'about', key: 'about' },
   { path: '/projects', component: ProjectsPage, name: 'Projects', classPrefix: 'projects', key: 'projects' },
+  { path: '/contact', component: ContactPage, name: 'Contact', classPrefix: 'contact', key: 'contact' },
+
 ];
 
 
